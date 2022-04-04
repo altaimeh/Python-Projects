@@ -2,7 +2,6 @@ from art import logo, vs
 from game_data import data
 import random
 
-
 def format_data(account):
     account_name = account["name"]
     account_descr = account["description"]
@@ -15,12 +14,13 @@ def check_answer(guess, a_followers, b_followers):
     else:
         return guess == "b" 
 
-print(logo)
+quit_value = True
 score = 0
-game_should_continue = True
+
 account_b = random.choice(data)
 
-while game_should_continue:
+while quit_value:
+    print(logo)
 
     account_a = account_b
     account_b = random.choice(data)
@@ -49,10 +49,16 @@ while game_should_continue:
         print(f"Yay! you got it right: current score: {score}")
         print("\n")
     else:
-        game_should_continue = False
         print("\n")
         print(f"Sorry, that's incorrect. Final Score: {score}")
         print("\n")
+        check_keep_going = input("Would you like to keep going? Type 'Y' or 'N': ")
+        check_keep_going = check_keep_going.lower()
+        if check_keep_going == 'y':
+            quit_value = True
+        else:
+            quit_value = False
+
             
 
 
