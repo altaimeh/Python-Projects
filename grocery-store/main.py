@@ -34,6 +34,86 @@ def is_resource_sufficient_candy(order_ingredients):
             is_enough = False 
     return is_enough
 
+def is_resource_sufficient_meat(order_ingredients):
+    is_enough = True 
+    for item in order_ingredients:
+        if order_ingredients[item] >= resources_meat[item]:
+            print(f"Sorry there is not enough {item}. ")
+            is_enough = False 
+    return is_enough
+
+def is_resource_sufficient_fruit(order_ingredients):
+    is_enough = True 
+    for item in order_ingredients:
+        if order_ingredients[item] >= resources_fruit[item]:
+            print(f"Sorry there is not enough {item}. ")
+            is_enough = False 
+    return is_enough
+
+def is_resource_sufficient_veggies(order_ingredients):
+    is_enough = True 
+    for item in order_ingredients:
+        if order_ingredients[item] >= resources_veggies[item]:
+            print(f"Sorry there is not enough {item}. ")
+            is_enough = False 
+    return is_enough
+
+def is_resource_sufficient_deli_bread(order_ingredients):
+    is_enough = True 
+    for item in order_ingredients:
+        if order_ingredients[item] >= resources_deli_bread[item]:
+            print(f"Sorry there is not enough {item}. ")
+            is_enough = False 
+    return is_enough
+
+def is_resource_sufficient_pasta_condiments(order_ingredients):
+    is_enough = True 
+    for item in order_ingredients:
+        if order_ingredients[item] >= resources_pasta_condiments[item]:
+            print(f"Sorry there is not enough {item}. ")
+            is_enough = False 
+    return is_enough
+
+def is_resource_sufficient_dry_goods(order_ingredients):
+    is_enough = True 
+    for item in order_ingredients:
+        if order_ingredients[item] >= resources_dry_goods[item]:
+            print(f"Sorry there is not enough {item}. ")
+            is_enough = False 
+    return is_enough
+
+def is_resource_sufficient_baby_pet_department(order_ingredients):
+    is_enough = True 
+    for item in order_ingredients:
+        if order_ingredients[item] >= resources_baby_pet_department[item]:
+            print(f"Sorry there is not enough {item}. ")
+            is_enough = False 
+    return is_enough
+
+def is_resource_sufficient_paper_goods(order_ingredients):
+    is_enough = True 
+    for item in order_ingredients:
+        if order_ingredients[item] >= resources_paper_goods[item]:
+            print(f"Sorry there is not enough {item}. ")
+            is_enough = False 
+    return is_enough
+
+def is_resource_sufficient_dairy_department(order_ingredients):
+    is_enough = True 
+    for item in order_ingredients:
+        if order_ingredients[item] >= resources_dairy_department[item]:
+            print(f"Sorry there is not enough {item}. ")
+            is_enough = False 
+    return is_enough
+
+def is_resource_sufficient_frozen_food(order_ingredients):
+    is_enough = True 
+    for item in order_ingredients:
+        if order_ingredients[item] >= resources_frozen_food[item]:
+            print(f"Sorry there is not enough {item}. ")
+            is_enough = False 
+    return is_enough
+
 def process_coins():
     print("Please insert coins. ")
     total = int(input("How many quarters?: ")) * 0.25
@@ -63,6 +143,56 @@ def make_candy(drink_name, order_ingredients):
         resources_candy[item] -= order_ingredients[item]
     print(f"Here is your {drink_name} ")
 
+def make_meat(drink_name, order_ingredients):
+    for item in order_ingredients:
+        resources_meat[item] -= order_ingredients[item]
+    print(f"Here is your {drink_name} ")
+
+def make_fruit(drink_name, order_ingredients):
+    for item in order_ingredients:
+        resources_fruit[item] -= order_ingredients[item]
+    print(f"Here is your {drink_name} ")
+
+def make_veggies(drink_name, order_ingredients):
+    for item in order_ingredients:
+        resources_veggies[item] -= order_ingredients[item]
+    print(f"Here is your {drink_name} ")
+
+def make_deli_bread(drink_name, order_ingredients):
+    for item in order_ingredients:
+        resources_deli_bread[item] -= order_ingredients[item]
+    print(f"Here is your {drink_name} ")
+
+def make_pasta_condiments(drink_name, order_ingredients):
+    for item in order_ingredients:
+        resources_pasta_condiments[item] -= order_ingredients[item]
+    print(f"Here is your {drink_name} ")
+
+def make_dry_goods(drink_name, order_ingredients):
+    for item in order_ingredients:
+        resources_dry_goods[item] -= order_ingredients[item]
+    print(f"Here is your {drink_name} ")
+
+def make_baby_pet_department(drink_name, order_ingredients):
+    for item in order_ingredients:
+        resources_baby_pet_department[item] -= order_ingredients[item]
+    print(f"Here is your {drink_name} ")
+
+def make_paper_goods(drink_name, order_ingredients):
+    for item in order_ingredients:
+        resources_paper_goods[item] -= order_ingredients[item]
+    print(f"Here is your {drink_name} ")
+
+def make_dairy_department(drink_name, order_ingredients):
+    for item in order_ingredients:
+        resources_dairy_department[item] -= order_ingredients[item]
+    print(f"Here is your {drink_name} ")
+
+def make_frozen_food(drink_name, order_ingredients):
+    for item in order_ingredients:
+        resources_frozen_food[item] -= order_ingredients[item]
+    print(f"Here is your {drink_name} ")
+
 is_on = True 
 
 while is_on: 
@@ -77,7 +207,6 @@ while is_on:
     print("Or, type none to quit") 
     print("\n")
     choice = input("What department would you like to go to today? ")
-    #choice = input("What would you like? (espresso/latte/cappuccino): ")
 
     if choice == "none":
         is_on = False 
