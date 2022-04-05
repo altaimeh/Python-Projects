@@ -1,6 +1,7 @@
 from secrets import choice
 from coffee import MENU
 from candy import CANDY_MENU 
+from meat import MEAT_MENU
 from resources import resources_coffee
 from resources import resources_candy
 from resources import resources_meat
@@ -460,6 +461,34 @@ while is_on:
             payment = process_coins()
             if is_transaction_successful(payment, candy["cost"]):
                 make_candy(choice_candy, candy["ingredients"])  
+
+        check_keep_going = input("Would you like to keep going? Type 'Y' or 'N': ")
+        check_keep_going = check_keep_going.lower()
+        if check_keep_going == 'y':
+            is_on = True
+        else:
+            is_on = False
+
+    if choice == "3":
+        print("\n")
+        print("Available options: ")
+        print("Chicken")
+        print("Beef") 
+        print("Steak")
+        print("Tenderloin")
+        print("Sirloin")
+        print("Flank")
+        print("Shrimp")
+        print("Crab")
+        print("Lobster")
+        print("\n")
+        choice_meat = input("What would you like to go to buy today? ")
+
+        meat = MEAT_MENU[choice_meat]
+        if is_resource_sufficient_meat(meat["ingredients"]):
+            payment = process_coins()
+            if is_transaction_successful(payment, meat["cost"]):
+                make_meat(choice_meat, meat["ingredients"])  
 
         check_keep_going = input("Would you like to keep going? Type 'Y' or 'N': ")
         check_keep_going = check_keep_going.lower()
