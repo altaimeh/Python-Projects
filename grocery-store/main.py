@@ -1,19 +1,22 @@
 from secrets import choice
 from coffee import MENU
 from candy import CANDY_MENU 
+from resources import resources_coffee
+from resources import resources_candy
+from resources import resources_meat
+from resources import resources_fruit
+from resources import resources_veggies
+from resources import resources_deli_bread
+from resources import resources_pasta_condiments
+from resources import resources_dry_goods
+from resources import resources_baby_pet_department
+from resources import resources_paper_goods
+from resources import resources_dairy_department
+from resources import resources_frozen_food
 
-profit = 0
 
-resources_coffee = {
-    "water": 300,
-    "milk": 200,
-    "coffee": 100,
-}
+profit = 0 
 
-resources_candy = {
-    "sugar": 3000,
-    "count": 2000,
-}
 
 def is_resource_sufficient(order_ingredients):
     is_enough = True 
@@ -79,7 +82,7 @@ while is_on:
     if choice == "none":
         is_on = False 
     elif choice == "report":
-        print("\n")
+        print("\n") 
         print("Select which department report you would like to view: ")
         print("Coffee Department, type 'coffee_report' ")
         print("Candy Department, type 'candy_report' ")
